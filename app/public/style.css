@@ -11,7 +11,7 @@ body {
 
 #lightgallery {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     align-items: flex-start;
     width: 100%;
 }
@@ -20,7 +20,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: 12px;
     min-width: 0;
 }
 
@@ -78,8 +78,16 @@ body {
 }
 
 #header h1 {
+    flex: 1;
     font-size: 18pt;
     font-weight: bold;
+    margin: 4px;
+    text-align: center;
+}
+
+#logo {
+    height: 40px;
+    width: auto;
     margin: 4px;
 }
 
