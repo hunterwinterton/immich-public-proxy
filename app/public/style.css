@@ -75,20 +75,20 @@ body {
 #header {
     width: 100%;
     display: flex;
+    align-items: center;
+    padding: 6px 0;
 }
 
 #header h1 {
-    flex: 1;
     font-size: 18pt;
     font-weight: bold;
-    margin: 4px;
-    text-align: center;
+    margin: 0 0 0 10px;
 }
 
 #logo {
-    height: 28px;
+    height: 24px;
     width: auto;
-    margin: 4px;
+    flex-shrink: 0;
 }
 
 #album-description h2 {
@@ -100,7 +100,8 @@ body {
 }
 
 #download-all {
-    margin: auto 4px auto auto;
+    margin-left: auto;
+    flex-shrink: 0;
 }
 
 #loading-spinner {
@@ -133,6 +134,9 @@ body {
         top: 0;
         z-index: 100;
         background: #191919;
+    }
+    #logo {
+        height: 36px;
     }
 }
 

@@ -121,26 +121,18 @@ const lgallery = new LGallery()
 ;(function () {
   const DESKTOP_MIN_WIDTH = 768
   let lastScrollY = window.scrollY
-  let ticking = false
   window.addEventListener('scroll', function () {
     if (window.innerWidth >= DESKTOP_MIN_WIDTH) return
-    if (!ticking) {
-      window.requestAnimationFrame(function () {
-        const header = document.getElementById('header')
-        if (header) {
-          const currentScrollY = window.scrollY
-          if (currentScrollY > lastScrollY && currentScrollY > 50) {
-            // Scrolling down — hide the header
-            header.classList.add('header-hidden')
-          } else {
-            // Scrolling up — show the header
-            header.classList.remove('header-hidden')
-          }
-          lastScrollY = currentScrollY
-        }
-        ticking = false
-      })
-      ticking = true
+    const header = document.getElementById('header')
+    if (!header) return
+    const currentScrollY = window.scrollY
+    if (currentScrollY > lastScrollY && currentScrollY > 50) {
+      // Scrolling down — hide the header
+      header.classList.add('header-hidden')
+    } else if (currentScrollY < lastScrollY) {
+      // Scrolling up — show the header
+      header.classList.remove('header-hidden')
     }
+    lastScrollY = currentScrollY
   }, { passive: true })
 })()
