@@ -5,13 +5,13 @@ html, body {
 }
 
 body {
-    padding: 8px;
+    padding: 8px 20px;
     box-sizing: border-box;
 }
 
 #lightgallery {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     align-items: flex-start;
     width: 100%;
 }
@@ -20,7 +20,7 @@ body {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 16px;
     min-width: 0;
 }
 
@@ -86,7 +86,7 @@ body {
 }
 
 #logo {
-    height: 40px;
+    height: 28px;
     width: auto;
     margin: 4px;
 }
@@ -123,5 +123,36 @@ body {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+/* ── Sticky header: desktop ── */
+@media (min-width: 768px) {
+    #header {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: #191919;
+    }
+}
+
+/* ── Hide/show header on mobile scroll ── */
+@media (max-width: 767px) {
+    #header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: #191919;
+        transition: transform 0.25s ease;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+    #header.header-hidden {
+        transform: translateY(-100%);
+    }
+    body {
+        padding-top: 56px;
     }
 }
