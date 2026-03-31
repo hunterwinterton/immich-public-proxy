@@ -85,6 +85,12 @@ body {
     margin: 0 0 0 10px;
 }
 
+#logo-link {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
 #logo {
     height: 24px;
     width: auto;
@@ -150,7 +156,7 @@ body {
         z-index: 100;
         background: #191919;
         transition: transform 0.25s ease;
-        padding: 0 20px;
+        padding: 6px 20px;
         box-sizing: border-box;
     }
     #header.header-hidden {
@@ -158,5 +164,8 @@ body {
     }
     body {
         padding-top: 56px;
+    }
+    #lightgallery a {
+        touch-action: pan-y;
     }
 }
